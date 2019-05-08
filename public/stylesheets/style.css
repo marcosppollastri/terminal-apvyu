@@ -1,10 +1,29 @@
 .boton {
     margin: 15px;
-    padding: 30px;
+    padding: 50px;
     font-size: 20px;
+    font-size: 27px;
+    white-space: normal;
+    word-wrap: break-word;
+    height: 70%;
 }
 
 .botonSecundario{
     padding: 50px;
-    margin: 20px;
+    margin: 15px;
+    font-size: 27px;
+    white-space: normal;
+    word-wrap: break-word;
+    height: 70%;
+}
+
+.media-object {
+    height: 300px;
+}
+
+.foot{
+    position: fixed;
+    bottom: 0px;
+    width: inherit;
+    max-width: 70%;
 }
