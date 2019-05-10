@@ -1,12 +1,13 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+var createError       = require('http-errors');
+var express           = require('express');
+var path              = require('path');
+var cookieParser      = require('cookie-parser');
+var logger            = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var requisitosRouter = require('./routes/requisitos')
+var indexRouter       = require('./routes/index');
+var usersRouter       = require('./routes/users');
+var requisitosRouter  = require('./routes/requisitos')
+var boletaRouter      = require('./routes/boleta-electronica');
 
 var app = express();
 
@@ -20,9 +21,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//Usar los enrutadores
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/requisitos', requisitosRouter);
+app.use('/boleta-electronica', boletaRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

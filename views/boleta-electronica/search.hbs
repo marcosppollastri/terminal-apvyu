@@ -1,0 +1,40 @@
+<div class="starter-template">
+		<div class="page-header"><h1>Facturas Online</h1></div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4>Mis Facturas</h4>
+					</div>
+					<div class="panel-body">
+
+						<form class="form-horizontal" method="post">
+							<div class="form-group">
+								<label class="col-lg-2 control-label">Código de Adjudicación	</label>
+								<div class="col-lg-8">
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="fa fa-lock"></i>
+										</span>
+										<input type="number" class="form-control" name="cod_adj" id="cod_adj" required="">
+									</div>
+								</div>
+
+								<div class="col-lg-2">
+									<button type="submit" class="btn btn-warning">Ingresar</button>
+									<input type="hidden" name="peticion" value="ver">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-lg-10 col-lg-offset-2">
+									<label>Para conocer de dónde obtener su número de adjudicación haga clic
+										<a data-toggle="modal" data-target="#myModal">aquí</a></label>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

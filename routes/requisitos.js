@@ -65,6 +65,41 @@ router.get('/con-terreno/creditos-garantia', function(req,res,next){
     res.render(showRoute, {plan : plan});
 });
 
+router.get('/sin-terreno/llave-en-mano', function(req,res,next){
+    var plan = {
+        descripcion: "Vivienda terminada en lote del Estado, destinado a personas solas o grupos familiares que cumplan con los requisitos establecidos en Ley 8.700 y sus reglamentarias",
+        ingresoMin: 0,
+        ingresoMax: 2,
+        img: "https://vivienda.larioja.gov.ar/images/Noticias/Entrega_Ulapes/Ulapes6.jpg",
+        doc: "/docs/sin-terreno/llave-en-mano.pdf"
+
+    };
+    res.render(showRoute, {plan : plan});
+});
+
+router.get('/sin-terreno/mi-primer-hogar', function(req,res,next){
+    var plan = {
+        descripcion: "Vivienda terminada en lote del Estado, destinado a personas solas o grupos familiares que cumplan con los requisitos establecidos en Ley 8.700 y sus reglamentarias",
+        ingresoMin: 2,
+        ingresoMax: 4,
+        img: "https://vivienda.larioja.gov.ar/images/Noticias/Entrega_Ulapes/Ulapes5.jpg",
+        doc: "/docs/sin-terreno/mi-primer-hogar.pdf"
+
+    };
+    res.render(showRoute, {plan : plan});
+});
+
+router.get('/sin-terreno/autoconstruccion-lote-estado', function(req,res,next){
+    var plan = {
+        descripcion: "Vivienda terminada en lote del Estado, con material y asistencia técnica aportado por APVyU y mano de obra aportada por el postulante. Destinado a personas solas y/o grupos familiares que cumplan con los requisitos establecidos en Ley 8.700 y sus reglamentarias",
+        ingresoMin: 2,
+        ingresoMax: 4,
+        img: "https://vivienda.larioja.gov.ar/images/Noticias/Entrega_Ulapes/Ulapes3.jpg",
+        doc: "/docs/sin-terreno/autoconstruccion-lote-estado.pdf"
+
+    };
+    res.render(showRoute, {plan : plan});
+});
 
 
 
