@@ -1,0 +1,41 @@
+
+<form action="edit" method="POST" class="form formulario" role="form">
+
+    <div class="form-group">
+        <label for="id">Id plan</label>
+        <input type="text" class="form-control" id="id-input" placeholder="Id de plan" name="id" required="required">
+    </div>
+    <div class="form-group">
+        <label for="descripcion">Descripción</label>
+        <input type="text" name="descripcion" id="descripcion" class="form-control" placeholder="Descripcion del plan" required="required" pattern="" title="">
+    </div>
+        
+    <div class="form-group">
+        <label for="ingresoMin">Ingreso minimo (cantidad de sueldos minimos)</label>
+        <input type="number" name="ingresoMin" id="ingresoMin" class="form-control" placeholder="Ingreso min" required="required" pattern="" title="">
+    </div>
+        
+    <div class="form-group">
+        <label for="ingresoMax">Ingreso máximo (cantidad de sueldos minimos)</label>
+        <input type="number" name="ingresoMax" id="ingresoMax" class="form-control" placeholder="Ingreso max" required="required" pattern="" title="">
+    </div>
+        
+    <div class="form-group">
+        <label for="img">Ruta de imagen</label>
+        <input type="text" name="img" id="img" class="form-control" placeholder="ruta de imagen" required="required" pattern="" title=""> 
+    </div>
+        
+    <div class="form-group">
+        <label for="doc">Ruta del documento</label>
+        <input type="text" name="doc" id="doc" class="form-control" placeholder="ruta de documento" required="required" pattern="" title="">
+    </div>
+
+
+    <div class="form-group form-boton">
+        <button type="reset" class="btn btn-large btn-block btn-warning">Resetear</button>
+    </div> 
+    <div class="form-group form-boton">
+        <button type="submit" class="btn btn-success btn-large btn-block">Hecho</button>
+    </div>            
+    
+</form>

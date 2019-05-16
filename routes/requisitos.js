@@ -7,6 +7,10 @@ router.get('/', function(req, res, next){
     res.render('requisitos/index-requisitos');
   });
 
+router.get('/edit',function(req, res, next){
+    res.render('requisitos/edit');
+});
+
   //Rutas para requisitos con terreno
 
 router.get('/con-terreno', function(req, res, next){
