@@ -9,7 +9,6 @@
         "http://localhost:3000/*",
         "https://vivienda.larioja.gov.ar/boleta/*"
       ],
-      "css":["style.css"],
       "js": ["jquery.min.js", "content.js"]
     }
   ],

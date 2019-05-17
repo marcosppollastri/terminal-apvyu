@@ -1,0 +1,53 @@
+.container .row{
+    padding: 10%;
+}
+
+footer{
+    color: red;
+}
+
+footer div.row{
+    color: azure;
+}
+
+
+.boton {
+    margin: 15px;
+    padding: 50px;
+    font-size: 20px;
+    font-size: 27px;
+    white-space: normal;
+    word-wrap: break-word;
+    height: 70%;
+}
+
+.botonSecundario{
+    padding: 50px;
+    margin: 15px;
+    font-size: 27px;
+    white-space: normal;
+    word-wrap: break-word;
+    height: 70%;
+}
+
+.media-object {
+    height: 300px;
+}
+
+.foot{
+    position: fixed;
+    bottom: 0px;
+
+    max-width: 70%;
+}
+
+.formulario{
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 50%;
+}
+
+.form-boton{
+    margin-right: 10px;
+    float: left;
+}
