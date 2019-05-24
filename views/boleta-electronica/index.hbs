@@ -1,0 +1,29 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+        <th>Periodo</th>
+        <th>Importe</th>
+        <th>Fecha Vto.</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each boletas}}
+        <tr>
+            <td>{{periodo}}</td>
+            <td>{{importe}}</td>
+            <td>{{vencimiento}}</td>
+            <td>{{estado}}</td>
+            <td>
+                {{#if imprimir}}
+                    <a href="/boleta-electronica/print?id={{id}}"><button class="btn btn-info btn-xs boton-boleta"><i class="fa fa-print"></i>Imprimir</button></a>
+                {{else}}
+                    <button class="btn btn-info btn-xs boton-boleta"><i class="fa fa-refresh"></i>Actualizar</button>
+                {{/if}}
+            </td>
+        </tr>
+        {{/each}}
+       
+    </tbody>
+</table>

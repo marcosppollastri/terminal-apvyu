@@ -10,6 +10,9 @@ var usersRouter       = require('./routes/users');
 var requisitosRouter  = require('./routes/requisitos')
 var boletaRouter      = require('./routes/boleta-electronica');
 
+// var path = require('path');
+// global.appRoot = path.resolve(__dirname);
+
 var app = express();
 
 // view engine setup
