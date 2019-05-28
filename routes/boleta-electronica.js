@@ -1,11 +1,13 @@
 var express = require('express');
 var router = express.Router();
-var fs = require("fs");
-var stream;
+//var fs = require("fs");
+//var stream;
 //var wget = require('node-wget');
+const { exec } = require('child_process');
 
 
-const wget = require('wget-improved');
+
+//const wget = require('wget-improved');
 
 
 var mysql = require('mysql');
@@ -66,16 +68,57 @@ router.get('/:id', function(req, res, next){
 
 router.get('/print/:id', function(req,res,next){
   var id = req.params.id;
-
+  console.log(typeof id);
   var path = 'docs/boletas/'+id+'.pdf'
   var boleta = {};
+  var postData = '"boleta_id='+ id +' \& peticion=imprimir"';
 
   //const src = 'https://vivienda.larioja.gov.ar/boleta/makepdf.php?boleta_id='+id+'&peticion=imprimir';
   const output = appRoot + '/public/' + path;
-  stream = fs.createWriteStream(output);
+
+  //var cmd = 'wget --post-data "boleta_id='+ id +'&peticion=imprimir" http://localhost/boleta/makepdf.php -O '+ output;
+
+  var cmd = 'wget --post-data '+ postData+' http://localhost/boleta/makepdf.php -O '+ output;
+
+
+// Function to download file using wget
+
+
+    exec(cmd, function(err, stdout, stderr) {
+        if (err) throw err;
+
+        else console.log(id + ' downloaded to ' + output);
+        console.log('stdout: ' + stdout);
+        console.log('stderr: ' + stderr);
+        if (err !== null) {
+          console.log('exec error: ' + error);
+        }
+        
+        boleta.path = path;
+  
+        res.render('boleta-electronica/print', {boleta : boleta});
+    });
+  
+
+  /*var child = exec(
+    cmd,
+    function (error, stdout, stderr) {
+      console.log('stdout: ' + stdout);
+      console.log('stderr: ' + stderr);
+      if (error !== null) {
+        console.log('exec error: ' + error);
+      }
+      boleta.path = path;
+  
+      res.render('boleta-electronica/print', {boleta : boleta});
+    }
+  );*/
+
+// #region codigo-viejo
+  /*stream = fs.createWriteStream(output);
   const options = {
-    protocol: 'https',
-    host: 'vivienda.larioja.gov.ar',
+    protocol: 'http',
+    host: 'localhost',
     path: '/boleta/makepdf.php?boleta_id='+id+'&peticion=imprimir',
     method: 'POST'
 };
@@ -121,9 +164,10 @@ let donwload = wget.request(options, function(response) {
       }
     }
   );*/
-  boleta.path = path;
+  // #endregion
+
+
   
-  res.render('boleta-electronica/print', {boleta : boleta});
   
 
 });

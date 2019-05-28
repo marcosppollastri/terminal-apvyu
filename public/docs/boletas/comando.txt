@@ -1,0 +1,1 @@
+wget --post-data "boleta_id=1830126&peticion=imprimir" http://localhost/boleta/makepdf.php -O boleta1234.pdf
