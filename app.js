@@ -4,6 +4,8 @@ var path              = require('path');
 var cookieParser      = require('cookie-parser');
 var logger            = require('morgan');
 var mongoose          = require('mongoose');
+var bodyParser        = require('body-parser');
+
 
 var indexRouter       = require('./routes/index');
 var usersRouter       = require('./routes/users');
@@ -14,14 +16,19 @@ var boletaRouter      = require('./routes/boleta-electronica');
 // global.appRoot = path.resolve(__dirname);
 
 var app = express();
-
+//configuracion de archivo .env
+require('dotenv').config();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+//app.use(express.json());
+//app.use(express.urlencoded({ extended: false }));
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+// parse application/json
+app.use(bodyParser.json())
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/static', express.static(__dirname + '/public'));

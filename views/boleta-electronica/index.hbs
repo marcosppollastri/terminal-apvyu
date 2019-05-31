@@ -17,7 +17,7 @@
             <td>{{estado}}</td>
             <td>
                 {{#if imprimir}}
-                    <a href="/boleta-electronica/print?id={{id}}"><button class="btn btn-info btn-xs boton-boleta"><i class="fa fa-print"></i>Imprimir</button></a>
+                    <a href="/boleta-electronica/{{id}}/print"><button class="btn btn-info btn-xs boton-boleta"><i class="fa fa-print"></i>Imprimir</button></a>
                 {{else}}
                     <button class="btn btn-info btn-xs boton-boleta"><i class="fa fa-refresh"></i>Actualizar</button>
                 {{/if}}
