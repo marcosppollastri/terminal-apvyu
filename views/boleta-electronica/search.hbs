@@ -1,4 +1,4 @@
-<div class="starter-template">
+{{!-- <div class="starter-template">
 		<div class="page-header"><h1>Facturas Online</h1></div>
 
 		<div class="row">
@@ -37,4 +37,53 @@
 				</div>
 			</div>
 		</div>
+	</div> --}}
+
+	
+	{{!-- <div class="container">
+		
+		<form action="/boleta-electronica" method="POST" class="form-horizontal formulario" role="form">
+				<div class="form-group formulario">
+					<legend>Ingrese su número de adjudicación</legend>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-10 col-sm-offset-5 ">
+						<input class="search-bar formulario" type="number" name="cod_adj" id="cod_adj" aria-label="Código de adjudicación">
+					</div>
+				</div>
+				
+		
+				<div class="form-group">
+					<div class="col-sm-10 col-sm-offset-6">
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</div>
+				</div>
+		</form>
+		
 	</div>
+	 --}}
+
+<div class="container">
+    <br/>
+	<div class="row justify-content-center">
+                        <div class="col-12 col-md-10 col-lg-8">
+                            <form class="card card-sm" action="/boleta-electronica" method="POST">
+                                <div class="card-body row no-gutters align-items-center">
+                                    <div class="col-auto">
+                                        <i class="fas fa-search h4 text-body"></i>
+                                    </div>
+                                    <!--end of col-->
+                                    <div class="col">
+                                        <input class="form-control form-control-lg form-control-borderless" type="search" name="cod_adj" placeholder="Ingrese código de adjudicación">
+                                    </div>
+                                    <!--end of col-->
+                                    <div class="col-auto">
+                                        <button class="btn btn-lg btn-success" type="submit">Buscar</button>
+                                    </div>
+                                    <!--end of col-->
+                                </div>
+                            </form>
+                        </div>
+                        <!--end of col-->
+                    </div>
+</div>
