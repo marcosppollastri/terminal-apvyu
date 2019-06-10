@@ -1,12 +1,13 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <img src="{{plan.img}}" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
                 
-                <img src="{{plan.img}}" class="img-responsive" alt="Image">
+                {{!-- <img src="" class="img-thumbnail" alt="Image"> --}}
                 
             </div>
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                 <p>{{plan.descripcion}}</p>
-                <p>Ingresos entre {{plan.ingresoMin}} a {{plan.ingreso.Max}} <strong>SALARIOS MÍNIMOS VITAL Y MÓVIL</strong> </p>
+                <p>Ingresos entre {{plan.ingresoMin}} a {{plan.ingresoMax}} <strong>SALARIOS MÍNIMOS VITAL Y MÓVIL</strong> </p>
             </div>
         </div>
         
